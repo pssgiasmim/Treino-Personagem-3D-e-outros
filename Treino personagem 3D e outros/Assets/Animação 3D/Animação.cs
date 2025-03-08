@@ -70,6 +70,8 @@ public class Animação : MonoBehaviour
        {
             rigidbody.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
             isGrounded = false;
+
+            anim.SetTrigger("Muda");
        }
         
        //Verifica se o jogador pressionou a tecla espaço e se está no chão.
