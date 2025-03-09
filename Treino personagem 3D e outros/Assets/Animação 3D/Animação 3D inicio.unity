@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 256762857}
   - component: {fileID: 256762856}
   - component: {fileID: 256762855}
+  - component: {fileID: 256762858}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,6 +216,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256762858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256762854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74127033e3c02145aaa347cc379c6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personagem: {fileID: 1987612590}
+  offset: {x: 0, y: 2, z: -5}
 --- !u!1 &1059193331
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,9 +545,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.32926393
-  m_Height: 2.3068678
+  m_Height: 1.8603814
   m_Direction: 1
-  m_Center: {x: -0.06317353, y: 0.6534339, z: 0}
+  m_Center: {x: -0.06317353, y: 0.87667716, z: 0}
 --- !u!54 &1987612588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -575,6 +590,11 @@ MonoBehaviour:
   velociMovimento: 5
   forcaPulo: 5
   cameraTransform: {fileID: 0}
+--- !u!4 &1987612590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48659bcba007f73479e715cd6f155892, type: 3}
+  m_PrefabInstance: {fileID: 1987612584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

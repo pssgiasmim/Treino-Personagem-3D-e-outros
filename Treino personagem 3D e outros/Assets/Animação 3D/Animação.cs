@@ -23,7 +23,7 @@ public class Animação : MonoBehaviour
     {
         Mover();
         Pular();
-        SeguirCamera();
+        
 
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -58,9 +58,9 @@ public class Animação : MonoBehaviour
         transform.Translate(direcaoMovimento * velociMovimento * Time.deltaTime, Space.World);
         //Move o personagem usando Translate(), multiplicando pela moveSpeed e Time.deltaTime para suavizar o movimento.
 
-        float speed = direcaoMovimento.magnitude * velociMovimento;
-        anim.SetFloat("Velocidade", speed);
-        anim.SetInteger("VelocidadeInt", (int)speed);
+        //float speed = direcaoMovimento.magnitude * velociMovimento;
+        anim.SetFloat("Velocidade", direcaoMovimento.magnitude);
+        //anim.SetInteger("VelocidadeInt", (int)speed);
 
     }
 
@@ -79,14 +79,7 @@ public class Animação : MonoBehaviour
        //Define isGrounded como falso para evitar múltipos pulos no ar.
     }
 
-    void SeguirCamera()
-    {
-        if (cameraTransform != null)
-        {
-            cameraTransform.position = new Vector3(transform.position.x, cameraTransform.position.y, transform.position.z - 5f);
-        }
-        //Atualiza a posição da câmera para que siga o jogador. E mantém a câmera 5 unidade atrás do personagem no eixo Z.
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
