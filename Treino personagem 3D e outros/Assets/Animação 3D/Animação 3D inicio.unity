@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 256762857}
   - component: {fileID: 256762856}
   - component: {fileID: 256762855}
-  - component: {fileID: 256762858}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,27 +208,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256762854}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.26, y: 0.83, z: -4.41}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.109999895, y: 0.84, z: -1.7299998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1987612590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &256762858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256762854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74127033e3c02145aaa347cc379c6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  personagem: {fileID: 1987612590}
-  offset: {x: 0, y: 2, z: -5}
 --- !u!1 &1059193331
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +469,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48659bcba007f73479e715cd6f155892, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 256762857}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 48659bcba007f73479e715cd6f155892, type: 3}
       insertIndex: -1
@@ -599,7 +587,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 256762857}
   - {fileID: 1059193333}
   - {fileID: 1987612584}
   - {fileID: 1884524552}

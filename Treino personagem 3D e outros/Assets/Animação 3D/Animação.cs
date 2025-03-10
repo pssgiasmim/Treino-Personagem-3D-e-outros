@@ -23,17 +23,18 @@ public class Animação : MonoBehaviour
     {
         Mover();
         Pular();
-        
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            anim.SetTrigger("Muda");
-        }
+        /*
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    anim.SetTrigger("Muda");
+                }
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            anim.SetTrigger("Desmuuda");
-        }
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    anim.SetTrigger("Desmuda");
+                }
+        */
     }
 
     void Mover()
@@ -59,6 +60,8 @@ public class Animação : MonoBehaviour
         //Move o personagem usando Translate(), multiplicando pela moveSpeed e Time.deltaTime para suavizar o movimento.
 
         //float speed = direcaoMovimento.magnitude * velociMovimento;
+
+       // float velocidade = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z).magnitude;
         anim.SetFloat("Velocidade", direcaoMovimento.magnitude);
         //anim.SetInteger("VelocidadeInt", (int)speed);
 
