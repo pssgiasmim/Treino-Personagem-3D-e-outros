@@ -76,7 +76,7 @@ public class Animação : MonoBehaviour
     {
        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
        {
-            rigidbody.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
+           // rigidbody.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
             isGrounded = false;
 
             anim.SetTrigger("Muda");
