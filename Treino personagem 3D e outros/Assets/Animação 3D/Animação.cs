@@ -46,13 +46,18 @@ public class Animação : MonoBehaviour
         {
             MoverX = -1f;
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             MoverX = 1f;
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             MoverZ = 1f;
+        }
+        else 
+        {
+            MoverX = 0;
+            MoverZ = 0;
         }
 
         Vector3 direcaoMovimento = new Vector3(MoverX, 0f, MoverZ).normalized;
