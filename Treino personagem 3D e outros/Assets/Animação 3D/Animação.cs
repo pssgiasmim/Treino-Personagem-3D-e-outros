@@ -10,12 +10,16 @@ public class Animação : MonoBehaviour
     private Rigidbody rigidbody; //Armazena o Rigidbody do personagem para aplicar física.
     private bool isGrounded; //Verifica se o personagem está no chão.
     private Animator anim;
+    private AudioSource audioSource;
+    public AudioClip somPulo; //Som do pulo
+    public AudioClip somCorrer; //Som correr personagem
 
     //No inicio do jogo vai ser pego o Rigidbody anexado no inspector.
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Chama os métodos de movimentação (Move()), pulo (Jump()) e para manter a câmera seguindo o jogador (FollowCamera()).
@@ -24,17 +28,7 @@ public class Animação : MonoBehaviour
         Mover();
         Pular();
 
-        /*
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    anim.SetTrigger("Muda");
-                }
-
-                if (Input.GetKeyDown(KeyCode.Y))
-                {
-                    anim.SetTrigger("Desmuda");
-                }
-        */
+      
     }
 
     void Mover()
@@ -64,11 +58,21 @@ public class Animação : MonoBehaviour
         transform.Translate(direcaoMovimento * velociMovimento * Time.deltaTime, Space.World);
         //Move o personagem usando Translate(), multiplicando pela moveSpeed e Time.deltaTime para suavizar o movimento.
 
-        //float speed = direcaoMovimento.magnitude * velociMovimento;
-
-       // float velocidade = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z).magnitude;
+        
         anim.SetFloat("Velocidade", direcaoMovimento.magnitude);
-        //anim.SetInteger("VelocidadeInt", (int)speed);
+       
+        //Toca o som da voz quando ele correr
+        if (direcaoMovimento.magnitude > 0 && !audioSource.isPlaying)
+        {
+            audioSource.clip = somCorrer;
+            audioSource.Play();
+        }
+        else if (direcaoMovimento.magnitude == 0)
+        {
+            audioSource.Stop();
+        }
+
+
 
     }
 
@@ -80,7 +84,13 @@ public class Animação : MonoBehaviour
             isGrounded = false;
 
             anim.SetTrigger("Muda");
-       }
+
+            //Toca o som do pulo
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(somPulo);
+            }
+        }
         
        //Verifica se o jogador pressionou a tecla espaço e se está no chão.
        //Aplica força para cima (Vector3.up * forcaPulo).
@@ -97,6 +107,13 @@ public class Animação : MonoBehaviour
         }
 
         // Detecta colisões do personagem. Se colidir  com algum objeto que a tag ground, permite que o jogador pule novamente.
+
+        /*if (collision.gameObject.CompareTag("Moeda"))
+        {
+            //Toca o som da moeda e destroi ela
+            collision.gameObject.GetComponent<AudioSource>().Play();
+            Destroy(collision.gameObject, 0.2f);
+        }*/
     }
 
 
