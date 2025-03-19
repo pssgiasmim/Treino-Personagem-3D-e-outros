@@ -33,7 +33,7 @@ public class Moeda : MonoBehaviour
            
 
             //Destroi a moeda após o som tocar
-           //Destroy(gameObject, somMoeda.length);
+           Destroy(gameObject, somMoeda.length, 0.2);
         }
        
     }
