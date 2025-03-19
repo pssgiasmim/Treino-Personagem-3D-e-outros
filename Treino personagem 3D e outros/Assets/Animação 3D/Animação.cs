@@ -73,7 +73,7 @@ public class Animação : MonoBehaviour
         }
         else if (direcaoMovimento.magnitude == 0)
         {
-            audioSource.Stop();
+            //audioSource.Stop();
         }
 
 
@@ -94,10 +94,7 @@ public class Animação : MonoBehaviour
                 audioSource.clip = somPulo;
                 audioSource.Play();
             }
-            else 
-            {
-                audioSource.Stop();
-            }
+            
         }
         
        //Verifica se o jogador pressionou a tecla espaço e se está no chão.
