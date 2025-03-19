@@ -24,7 +24,7 @@ public class Moeda : MonoBehaviour
 
             //Esconde a moeda antes de destruir (para dar tempo de tocar o sonzinho)
             GetComponent<MeshRenderer>().enabled = true;
-            GetComponent<CameraFollow>().enabled = false;
+            //GetComponent<CameraFollow>().enabled = false;
 
             if (moedaSpawner != null)
             {

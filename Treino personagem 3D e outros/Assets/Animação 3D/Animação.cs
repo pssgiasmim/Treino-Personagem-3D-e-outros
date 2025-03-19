@@ -48,6 +48,10 @@ public class Animação : MonoBehaviour
         {
             MoverZ = 1f;
         }
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            MoverZ = -1f;
+        }
         else 
         {
             MoverX = 0;
@@ -85,10 +89,14 @@ public class Animação : MonoBehaviour
 
             anim.SetTrigger("Muda");
 
-            //Toca o som do pulo
-            if (!audioSource.isPlaying)
+            if (isGrounded == false)
             {
-                audioSource.PlayOneShot(somPulo);
+                audioSource.clip = somPulo;
+                audioSource.Play();
+            }
+            else 
+            {
+                audioSource.Stop();
             }
         }
         
