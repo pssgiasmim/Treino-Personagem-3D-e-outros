@@ -23,17 +23,18 @@ public class Moeda : MonoBehaviour
             audioSource.PlayOneShot(somMoeda);
 
             //Esconde a moeda antes de destruir (para dar tempo de tocar o sonzinho)
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = true;
             GetComponent<CameraFollow>().enabled = false;
 
             if (moedaSpawner != null)
             {
                 moedaSpawner.SpawnMoeda();
+
             }
            
 
             //Destroi a moeda após o som tocar
-           Destroy(gameObject, somMoeda.length, 0.2);
+           Destroy(gameObject, somMoeda.length);
         }
        
     }
