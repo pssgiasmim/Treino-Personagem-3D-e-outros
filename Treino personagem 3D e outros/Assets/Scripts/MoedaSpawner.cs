@@ -6,7 +6,13 @@ public class MoedaSpawner : MonoBehaviour
 {
     public GameObject moedaPrefab; // Referencia o prefab da moeda.
     public Transform[] spawnPoints; //é um array de pontos onde as moedas podem ser intanciadas
+    public GameObject particula;
+    public static MoedaSpawner instance;
 
+    public void Awake()
+    {
+        instance = this;
+    }
     public void SpawnMoeda()
     {
         if (spawnPoints == null || spawnPoints.Length == 0)
@@ -16,6 +22,8 @@ public class MoedaSpawner : MonoBehaviour
         }
         int randomIndex = Random.Range(0, spawnPoints.Length); //Escolhe um ponto aleatório
         Instantiate(moedaPrefab, spawnPoints[randomIndex].position, Quaternion.identity);
+        
+        
     }
 
     private void Start()

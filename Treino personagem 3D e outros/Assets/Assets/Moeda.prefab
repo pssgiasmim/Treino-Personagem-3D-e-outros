@@ -215,4 +215,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc4738efca34f7478ee3bc9fa92a164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particula: {fileID: 8123505024851393047, guid: b9dd627186ccbbf4388b4c6b0b40ed56, type: 3}
   somMoeda: {fileID: 8300000, guid: e20a1e77e13252c4b86cc21f8f8d4392, type: 3}
